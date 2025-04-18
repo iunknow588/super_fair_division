@@ -17,9 +17,15 @@ A Rust library for fair division algorithms.
 
 ## Algorithm
 
+超公平分配是一种对于不可分割的共享物品的分配处理程序.
+出价最高的参与者会得到该不可分割的物品,其他参与者按照物品的主观估值得到对应的补偿.
+该分割模型是基于公平核的分配模式.
+其中,公平核是所有参与者应该得到的主观公平值,其大小仅仅由参与者自己的报价得到.
+公平核的计算是反策略勾结的,仅仅由参与者自己的主观偏好决定.
+
 ### Equal Weights Super Fair Division
 
-1. 每个参与者的公平收益初始值为 v/n，其中v是该参与者的报价，n是参与者总数
+1. 每个参与者的公平收益值为 v/n，其中v是该参与者的报价，n是参与者总数
 2. 计算超公平数值 delta = (n*maxV-sumV)/(n*n)，其中maxV是最高报价，sumV是所有报价之和
 3. 每个参与者的收益值更新为 v/n + delta
 4. 最后，修正出价最高的用户的收益为其他所有人收益之和的负值
@@ -30,7 +36,7 @@ A Rust library for fair division algorithms.
 2. 按照权重比例计算总人数 n（总人数就是权重之和）
 3. 计算超公平数值 delta = (n*maxV_weighted-sumV)/(n*n)，其中maxV_weighted是最高报价乘以其权重
 4. 每个人的收益为 (v/n+delta)*weight
-5. 最后，修正出价最高的用户的收益为其他所有人收益之和的负值除以该用户的权重
+5. 最后，修正出价最高的用户的收益为其他所有人收益之和的负值
 
 ## Installation
 
