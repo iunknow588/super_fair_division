@@ -1,0 +1,18 @@
+[package]
+name = "super_fair_division"
+version = "0.1.0"
+edition = "2021"
+authors = ["iunknow <iunknow@163.com>"]
+description = "A library for fair division algorithms"
+license = "MIT"
+repository = "https://github.com/iunknow588/super_fair_division"
+documentation = "https://docs.rs/super_fair_division"
+readme = "README.md"
+keywords = ["fair-division", "algorithm", "mathematics"]
+categories = ["algorithms", "mathematics"]
+
+[dependencies]
+# 暂时没有外部依赖
+
+[dev-dependencies]
+# 暂时移除基准测试依赖
