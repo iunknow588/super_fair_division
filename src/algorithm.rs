@@ -6,7 +6,7 @@ use crate::Result;
 ///
 /// # Algorithm
 ///
-/// 1. 每个参与者的公平收益初始值为 v/n，其中v是该参与者的报价，n是参与者总数
+/// 1. 每个参与者的公平收益值为 v/n，其中v是该参与者的报价，n是参与者总数
 /// 2. 计算超公平数值 delta = (n*maxV-sumV)/(n*n)，其中maxV是最高报价，sumV是所有报价之和
 /// 3. 每个参与者的收益值更新为 v/n + delta
 /// 4. 最后，修正出价最高的用户的收益为其他所有人收益之和的负值
@@ -84,7 +84,7 @@ pub fn calculate_fair_division_equal_weights(values: &[i128]) -> Result<Vec<i128
 ///
 /// 1. 将权重比例转成正整数比例
 /// 2. 按照权重比例计算总人数 n
-/// 3. 计算超公平数值 delta = (n*maxV_weighted-sumV)/(n*n)，其中maxV_weighted是最高报价乘以其权重
+/// 3. 计算超公平数值 delta = (n*maxV-sumV)/(n*n)，其中maxV是最高报价
 /// 4. 每个人的收益为 (v/n+delta)*weight
 /// 5. 最后，修正出价最高的用户的收益为其他所有人收益之和的负值除以该用户的权重
 ///
